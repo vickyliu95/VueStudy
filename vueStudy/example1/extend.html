@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript" src="../assets/js/vue.js"></script>
+    <title>vue.extend构造器的延生</title>
+</head>
+<body>
+<h1>Vue.extend</h1>
+<hr>
+<p>author标签：自己构造的</p>
+<author></author>
+<p>div</p>
+<div id = "abc">
+
+</div>
+
+<script type="text/javascript">
+    var authorExtend = Vue.extend({
+        //template：HTML模板
+        template:"<p><a :href='authorUrl'>{{authorName}}</a></p>",
+        data:function(){
+            return{
+                authorName:'lamco',
+                authorUrl:'http://www.lamco.com.cn/'
+            }
+        }
+    });
+    console.log(new authorExtend());
+    //使用模板 $mount(el,可以使用标签名，类名,id名)挂载，把使用的对象挂载到HTML解构当中
+    new authorExtend().$mount('author');
+    new authorExtend().$mount('#abc');
+</script>
+</body>
+</html>

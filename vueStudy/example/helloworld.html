@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>helloworld</title>
+    <script type="text/javascript" src="../assets/js/vue.js"></script>
+</head>
+<body>
+    <h1>hello VUE</h1>
+    <hr>
+    <div id = "app">
+        <!--插值表达式-->
+        {{message}}
+    </div>
+    <script>
+        //var app=new Vue();通过类创建对象
+        //el:选择元素
+        //data：构造数据{}
+        var app=new Vue({
+            el:'#app',//元素element：id名
+            // data不能改，message名可以改
+            data:{
+                message:'hello Vue!'//键值
+            }
+        });
+    </script>
+</body>
+</html>
